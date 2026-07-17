@@ -231,7 +231,7 @@ The assistant intelligently splits commands and executes them one after another.
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/AI-Voice-Assistant.git
+git clone https://github.com/Naveen-Sai-25/AI-Voice-Assistant.git
 ```
 
 Move into project
@@ -320,8 +320,6 @@ AI-Voice-Assistant/
 ├── agent.py
 ├── README.md
 ├── requirements.txt
-├── screenshot.png
-└── assets/
 ```
 
 ---
