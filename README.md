@@ -379,7 +379,7 @@ This project is licensed under the MIT License.
 
 **Challa Naga Sai Lakshmi Naveen**
 
-📧 Email: your-email@example.com
+📧 Email: naveensaichalla@gmail.com
 
 🌐 GitHub: https://github.com/Naveen-Sai-25
 
