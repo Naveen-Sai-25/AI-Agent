@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Python](https://img.shields.io/badge/Python-3.14-blue?style=for-the-badge&logo=python)
 ![Windows](https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows)
 ![Speech Recognition](https://img.shields.io/badge/Speech-Recognition-success?style=for-the-badge)
 ![Automation](https://img.shields.io/badge/Desktop-Automation-orange?style=for-the-badge)
