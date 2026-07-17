@@ -16,11 +16,15 @@
 # 📌 Features
 
 ## 🎤 Voice Recognition
+
 - Listen to voice commands
 - Convert speech to text
 - Text-to-Speech responses
 
+---
+
 ## 🌐 AI Platform Integration
+
 Supports voice commands for:
 
 - ChatGPT
@@ -28,9 +32,9 @@ Supports voice commands for:
 - Claude
 - Perplexity AI
 
-Example:
+### Example
 
-```
+```text
 Search ChatGPT for Python decorators
 Ask Gemini about quantum computing
 Open Claude
@@ -42,13 +46,13 @@ Open Claude
 
 Search Google
 
-```
+```text
 Search Artificial Intelligence
 ```
 
 Search YouTube
 
-```
+```text
 Search YouTube Python Tutorial
 ```
 
@@ -70,9 +74,9 @@ Open applications
 - Visual Studio Code
 - File Explorer
 
-Launch any application using
+Launch any application
 
-```
+```text
 Open Spotify
 Open Discord
 Open Telegram
@@ -84,9 +88,7 @@ Open Telegram
 
 Open Notepad and continuously dictate text.
 
-Commands
-
-```
+```text
 Type Hello everyone
 
 Delete project
@@ -98,11 +100,7 @@ Stop writing
 
 ## 📷 Screenshot
 
-Take screenshots using voice.
-
-Command
-
-```
+```text
 Take Screenshot
 ```
 
@@ -110,9 +108,7 @@ Take Screenshot
 
 ## 🔊 Volume Controls
 
-Voice commands
-
-```
+```text
 Volume Up
 
 Volume Down
@@ -124,27 +120,13 @@ Mute
 
 ## 🔐 System Controls
 
-Lock Computer
-
-```
+```text
 Lock Laptop
-```
 
-Shutdown
-
-```
 Shutdown Laptop
-```
 
-Restart
-
-```
 Restart Laptop
-```
 
-Cancel Shutdown
-
-```
 Cancel Shutdown
 ```
 
@@ -152,9 +134,7 @@ Cancel Shutdown
 
 ## 🔋 Battery Status
 
-Command
-
-```
+```text
 Battery Status
 ```
 
@@ -167,9 +147,7 @@ Returns
 
 ## 🕒 Tell Time
 
-Command
-
-```
+```text
 What is the time?
 ```
 
@@ -177,11 +155,7 @@ What is the time?
 
 ## 📋 Clipboard Support
 
-Copy spoken text directly to clipboard.
-
-Command
-
-```
+```text
 Copy to Clipboard Hello World
 ```
 
@@ -189,25 +163,21 @@ Copy to Clipboard Hello World
 
 ## 🖥️ Active Window Control
 
-Close current application
-
-```
+```text
 Close This Window
 ```
 
 ---
 
-## ⚡ Multiple Commands in One Sentence
+## ⚡ Multiple Commands
 
-Example
+Execute multiple commands in one sentence.
 
-```
+```text
 Open Chrome and Open Calculator
 
 Open Notepad then Open VS Code
 ```
-
-The assistant intelligently splits commands and executes them one after another.
 
 ---
 
@@ -215,52 +185,65 @@ The assistant intelligently splits commands and executes them one after another.
 
 - Python
 - SpeechRecognition
+- PyAudio
 - pyttsx3
 - PyAutoGUI
-- Psutil
-- Subprocess
-- WebBrowser
+- psutil
+- pyperclip
+- subprocess
 - ctypes
 - urllib
-- OS Module
+- webbrowser
 
 ---
 
 # 📦 Installation
 
-Clone the repository
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/Naveen-Sai-25/AI-Voice-Assistant.git
 ```
 
-Move into project
+---
+
+## 2️⃣ Navigate to the Project
 
 ```bash
 cd AI-Voice-Assistant
 ```
 
-Install dependencies
+---
+
+## 3️⃣ Install Dependencies
+
+Using requirements.txt
+
+```bash
+pip install -r requirements.txt
+```
+
+Or install manually
 
 ```bash
 pip install SpeechRecognition
+pip install PyAudio
 pip install pyttsx3
 pip install pyautogui
 pip install psutil
 pip install pyperclip
-pip install pyaudio
 ```
 
-If PyAudio fails:
+If PyAudio fails
 
-```
+```bash
 pip install pipwin
 pipwin install pyaudio
 ```
 
 ---
 
-# ▶️ Run
+# ▶️ Run the Project
 
 ```bash
 python agent.py
@@ -268,75 +251,265 @@ python agent.py
 
 ---
 
-# 🎤 Example Commands
+# 📂 Project Structure
 
+```text
+AI-Voice-Assistant/
+│
+├── agent.py
+├── requirements.txt
+├── README.md
+└── LICENSE
 ```
+
+---
+
+# ⚙️ How This Project Works
+
+The AI Voice Assistant continuously listens for voice commands, converts them into text, identifies the requested action, and executes it on the Windows system.
+
+## 🏗️ Workflow
+
+```text
+                User Speaks
+                     │
+                     ▼
+        🎤 SpeechRecognition Library
+                     │
+                     ▼
+          Convert Speech to Text
+                     │
+                     ▼
+        Command Processing Engine
+                     │
+      ┌──────────────┼──────────────┐
+      ▼              ▼              ▼
+ Browser Tasks   Windows Tasks   AI Platforms
+      │              │              │
+      ▼              ▼              ▼
+ Chrome         Calculator      ChatGPT
+ YouTube        Notepad         Gemini
+ Google         VS Code         Claude
+ WhatsApp       Explorer        Perplexity
+      │              │              │
+      └──────────────┼──────────────┘
+                     ▼
+           🗣️ Text-to-Speech Response
+```
+
+---
+
+# 📖 Step-by-Step Working
+
+## Step 1 — Initialize the Assistant
+
+When `agent.py` starts, it initializes:
+
+- Speech Recognition
+- Text-to-Speech Engine
+- Microphone
+- Command Router
+- Windows Automation Modules
+
+```python
+recognizer = sr.Recognizer()
+engine = pyttsx3.init()
+```
+
+---
+
+## Step 2 — Listen for Voice Commands
+
+The assistant waits for the user to speak.
+
+Example
+
+```text
+Open Chrome
+```
+
+or
+
+```text
+Search ChatGPT for Machine Learning
+```
+
+SpeechRecognition converts the spoken audio into text.
+
+---
+
+## Step 3 — Process the Command
+
+The recognized text is analyzed to determine the requested action.
+
+| Voice Command | Action |
+|---------------|--------|
+| Open Chrome | Launch Chrome |
+| Open Calculator | Open Calculator |
+| Search Python | Google Search |
+| Open ChatGPT | Launch ChatGPT |
+| Lock Laptop | Lock Windows |
+| Battery Status | Display Battery Information |
+
+---
+
+## Step 4 — Execute the Command
+
+The assistant performs the requested operation using Windows APIs and Python libraries.
+
+Examples
+
+- Open Applications
+- Search Google
+- Search YouTube
+- Launch AI Platforms
+- Take Screenshots
+- Lock Laptop
+- Control Volume
+- Open File Explorer
+- Live Dictation
+- Clipboard Operations
+
+---
+
+## Step 5 — Respond Back
+
+After executing the command, the assistant confirms the action using Text-to-Speech.
+
+Example
+
+```text
+Opening Chrome...
+
+Searching Google for Python...
+
+Locking your laptop...
+
+Screenshot saved.
+```
+
+---
+
+# 🧠 Command Processing Architecture
+
+```text
+Voice Input
+     │
+     ▼
+SpeechRecognition
+     │
+     ▼
+Speech to Text
+     │
+     ▼
+process_multiple_commands()
+     │
+     ▼
+execute()
+     │
+     ├───────────────┐
+     │               │
+     ▼               ▼
+AI Commands     Windows Commands
+     │               │
+     ▼               ▼
+Browser        Automation
+     │               │
+     └───────┬───────┘
+             ▼
+      Text-to-Speech
+```
+
+---
+
+# 📚 Python Libraries Used
+
+| Library | Purpose |
+|----------|---------|
+| SpeechRecognition | Speech-to-Text |
+| PyAudio | Microphone Input |
+| pyttsx3 | Text-to-Speech |
+| PyAutoGUI | Keyboard, Mouse & Screenshot Automation |
+| psutil | Battery & System Information |
+| pyperclip | Clipboard Operations |
+| subprocess | Launch Windows Applications |
+| webbrowser | Open Websites |
+| ctypes | Windows API Access |
+| urllib | Encode Search Queries |
+
+---
+
+# 💡 Example Voice Commands
+
+```text
 Open Chrome
 
 Open Calculator
-
-Search Artificial Intelligence
-
-Search YouTube Python
-
-Open ChatGPT
-
-Search ChatGPT for Python Lists
-
-Ask Gemini about AI
-
-Open Claude
-
-Take Screenshot
-
-Lock Laptop
-
-Battery Status
 
 Open VS Code
 
 Open File Explorer
 
+Search Python Programming
+
+Search YouTube Arduino Tutorial
+
+Open ChatGPT
+
+Search ChatGPT for Binary Search
+
+Ask Gemini about Artificial Intelligence
+
+Open Claude
+
+Open Perplexity
+
+Take Screenshot
+
 Volume Up
+
+Volume Down
 
 Mute
 
+Lock Laptop
+
+Battery Status
+
 Copy to Clipboard Hello World
 
-What is the time?
+What is the Time
 
 Close This Window
 
 Open Chrome and Open Calculator
+
+Open Notepad then Open VS Code
 ```
 
 ---
 
-# 📂 Project Structure
+# 🛠️ System Requirements
 
-```
-AI-Voice-Assistant/
-│
-├── agent.py
-├── README.md
-├── requirements.txt
-```
+- Windows 10 / Windows 11
+- Python 3.10+
+- Working Microphone
+- Internet Connection
+- Google Chrome Installed
 
 ---
 
 # 🚀 Future Improvements
 
-- OpenAI API integration
-- Offline speech recognition
-- Wake word detection
-- AI chat memory
-- Weather updates
-- Email automation
-- File management
-- Music player control
-- Smart home integration
-- Face recognition login
-- Cross-platform support (Linux & macOS)
+- ✅ Wake Word Detection
+- ✅ Offline Speech Recognition
+- ✅ Weather Information
+- ✅ Email Automation
+- ✅ AI Memory
+- ✅ Music Player Controls
+- ✅ Smart Home Integration
+- ✅ Face Recognition Login
+- ✅ Linux & macOS Support
 
 ---
 
@@ -344,32 +517,23 @@ AI-Voice-Assistant/
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a feature branch
+```bash
+# Fork the repository
 
-```
 git checkout -b feature-name
-```
 
-3. Commit changes
-
-```
 git commit -m "Added new feature"
-```
 
-4. Push
-
-```
 git push origin feature-name
 ```
 
-5. Open a Pull Request
+Then create a Pull Request.
 
 ---
 
 # 📜 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -377,10 +541,16 @@ This project is licensed under the MIT License.
 
 **Challa Naga Sai Lakshmi Naveen**
 
-📧 Email: naveensaichalla@gmail.com
+📧 Email: **naveensaichalla@gmail.com**
 
 🌐 GitHub: https://github.com/Naveen-Sai-25
 
 ---
 
-⭐ If you found this project useful, don't forget to **Star** the repository!
+<div align="center">
+
+### ⭐ If you found this project useful, consider giving it a Star!
+
+**Happy Coding! 🚀**
+
+</div>
